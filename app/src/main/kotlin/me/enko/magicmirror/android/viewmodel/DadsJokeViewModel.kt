@@ -7,9 +7,9 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import me.enko.magicmirror.android.R
 import me.enko.magicmirror.android.data.DadsJoke
 import me.enko.magicmirror.android.data.DadsJokeRetrofitService
-import timber.log.Timber
 import java.util.concurrent.TimeUnit
 
 class DadsJokeViewModel(application: Application) : ScopedViewModel(application) {
@@ -27,14 +27,10 @@ class DadsJokeViewModel(application: Application) : ScopedViewModel(application)
                 try {
                     DadsJokeRetrofitService.get(getApplication()).getNextJoke().await()
                 } catch (e: Exception) {
-                    Timber.e(e)
-                    null
+                    DadsJoke(getApplication<Application>().getString(R.string.error_no_internet))
                 }
             }
-
-            if (joke != null) {
-                jokeLiveData.postValue(joke)
-            }
+            jokeLiveData.postValue(joke)
             delay(REFRESH_INTERVAL)
         }
     }

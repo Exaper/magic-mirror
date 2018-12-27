@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:padding="8dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-    <androidx.appcompat.widget.AppCompatTextView
+    <TextView
             android:id="@+id/greetingText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textStyle="italic"
             android:lines="1"
             android:gravity="center"
-            app:autoSizeMinTextSize="30dp"
-            app:autoSizeMaxTextSize="64dp"
+            android:textAppearance="?attr/textAppearanceHeadline5"
             android:textAlignment="gravity"
-            app:autoSizeTextType="uniform"/>
+            tools:text="Hello!"/>
 
 </FrameLayout>

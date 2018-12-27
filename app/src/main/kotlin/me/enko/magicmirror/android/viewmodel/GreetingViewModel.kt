@@ -19,8 +19,8 @@ class GreetingViewModel(application: Application) : ScopedViewModel(application)
     }
 
     private suspend fun startServingGreetings() {
+        val greetings = getApplication<Application>().resources.getStringArray(R.array.greetings)
         while (isActive) {
-            val greetings = getApplication<Application>().resources.getStringArray(R.array.greetings)
             greetingLiveData.value = greetings[Random.nextInt(greetings.size)]
             delay(REFRESH_INTERVAL)
         }
