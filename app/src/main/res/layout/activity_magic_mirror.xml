@@ -14,4 +14,18 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"/>
+
+    <fragment
+            android:id="@+id/weatherFragment"
+            android:name="me.enko.magicmirror.android.WeatherFragment"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+    <fragment
+            android:id="@+id/dadsJokeFragment"
+            android:name="me.enko.magicmirror.android.DadsJokeFragment"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
 </LinearLayout>
