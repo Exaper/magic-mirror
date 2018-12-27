@@ -1,6 +1,14 @@
 <resources>
     <string name="app_name">MagicMirror</string>
 
-    <string name="dummy_button">Dummy Button</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string-array name="greetings">
+        <item>Howdy, stranger!</item>
+        <item>Looking great!</item>
+        <item>Hello, beautiful!</item>
+        <item>How you doing?</item>
+        <item>What a look!</item>
+        <item>Got new haircut?</item>
+        <item>Hello, sunshine!</item>
+        <item>You are the best!</item>
+    </string-array>
 </resources>

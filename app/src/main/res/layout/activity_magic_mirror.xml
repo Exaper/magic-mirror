@@ -8,6 +8,15 @@
               android:fitsSystemWindows="true"
               android:orientation="vertical"
               tools:context=".MagicMirror">
+
+    <fragment
+            android:id="@+id/greetingFragment"
+            android:name="me.enko.magicmirror.android.GreetingFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    <include layout="@layout/divider"/>
+
     <fragment
             android:id="@+id/currentTimeFragment"
             android:name="me.enko.magicmirror.android.CurrentTimeFragment"
@@ -15,12 +24,16 @@
             android:layout_height="0dp"
             android:layout_weight="1"/>
 
+    <include layout="@layout/divider"/>
+
     <fragment
             android:id="@+id/weatherFragment"
             android:name="me.enko.magicmirror.android.WeatherFragment"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"/>
+
+    <include layout="@layout/divider"/>
 
     <fragment
             android:id="@+id/dadsJokeFragment"
