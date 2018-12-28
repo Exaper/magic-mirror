@@ -9,6 +9,7 @@ import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.fragment_weather.*
 import me.enko.magicmirror.android.data.Weather
 import me.enko.magicmirror.android.viewmodel.WeatherViewModel
@@ -42,11 +43,10 @@ class WeatherFragment : Fragment() {
         detailsTextView.text = "${weather.cityName}\n${weather.meta[0].description.capitalizeWords()}"
         temperatureTextView.text = getString(R.string.degrees_in_fahrenheit, weather.detailed.temperature.toInt())
 
-        // TODO live image
-        //val imageId = weather.meta[0].icon
+        val imageId = weather.meta[0].icon
 
-//        Picasso.get()
-//            .load("https://openweathermap.org/img/w/$imageId.png")
-//            .into(iconImageView)
+        Picasso.get()
+            .load("https://openweathermap.org/img/w/$imageId.png")
+            .into(iconImageView)
     }
 }
