@@ -1,47 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             xmlns:tools="http://schemas.android.com/tools"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent"
-             android:background="#0099cc"
-             tools:context=".MagicMirror">
-
-    <!-- The primary full-screen view. This can be replaced with whatever view
-         is needed to present your content, e.g. VideoView, SurfaceView,
-         TextureView, etc. -->
-    <TextView android:id="@+id/fullscreen_content"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:id="@+id/rootView"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:keepScreenOn="true"
-              android:textColor="#33b5e5"
-              android:textStyle="bold"
-              android:textSize="50sp"
-              android:gravity="center"
-              android:text="@string/dummy_content"/>
+              android:fitsSystemWindows="true"
+              android:orientation="vertical"
+              tools:context=".MagicMirror">
 
-    <!-- This FrameLayout insets its children based on system windows using
-         android:fitsSystemWindows. -->
-    <FrameLayout android:layout_width="match_parent"
-                 android:layout_height="match_parent"
-                 android:fitsSystemWindows="true">
+    <fragment
+            android:id="@+id/greetingFragment"
+            android:name="me.enko.magicmirror.android.GreetingFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 
-        <LinearLayout android:id="@+id/fullscreen_content_controls"
-                      style="?metaButtonBarStyle"
-                      android:layout_width="match_parent"
-                      android:layout_height="wrap_content"
-                      android:layout_gravity="bottom|center_horizontal"
-                      android:background="@color/black_overlay"
-                      android:orientation="horizontal"
-                      tools:ignore="UselessParent">
+    <include layout="@layout/divider"/>
 
-            <Button android:id="@+id/dummy_button"
-                    style="?metaButtonBarButtonStyle"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/dummy_button"/>
+    <fragment
+            android:id="@+id/currentTimeFragment"
+            android:name="me.enko.magicmirror.android.CurrentTimeFragment"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
 
-        </LinearLayout>
-    </FrameLayout>
+    <include layout="@layout/divider"/>
 
-</FrameLayout>
+    <fragment
+            android:id="@+id/weatherFragment"
+            android:name="me.enko.magicmirror.android.WeatherFragment"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+    <include layout="@layout/divider"/>
+
+    <fragment
+            android:id="@+id/dadsJokeFragment"
+            android:name="me.enko.magicmirror.android.DadsJokeFragment"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+</LinearLayout>
