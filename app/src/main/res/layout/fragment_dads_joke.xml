@@ -9,7 +9,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:textStyle="italic"
-            android:maxLines="3"
             android:gravity="center"
             app:autoSizeMinTextSize="30dp"
             app:autoSizeMaxTextSize="64dp"
