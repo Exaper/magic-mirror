@@ -12,6 +12,7 @@ android {
         versionCode 1
         versionName "1.0.1-dev"
         archivesBaseName = "MagicMirror-v$versionName"
+        buildConfigField 'String', "OPEN_WEATHER_MAP_APP_ID", "\"a592ba0abd517f1c959832ec53936be\""
     }
     buildTypes {
         release {
@@ -44,4 +45,6 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.0.1"
     implementation 'com.jakewharton.timber:timber:4.7.1'
     implementation 'com.squareup.okhttp3:logging-interceptor:3.9.1'
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'com.google.android.gms:play-services-location:16.0.0'
 }

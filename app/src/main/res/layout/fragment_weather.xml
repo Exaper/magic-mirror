@@ -1,7 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<me.enko.magicmirror.android.widget.ScalerView
+<LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
-</me.enko.magicmirror.android.widget.ScalerView>
+    <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/detailsTextView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:lines="2"
+            android:gravity="center_vertical|end"
+            app:autoSizeMinTextSize="30dp"
+            app:autoSizeMaxTextSize="64dp"
+            android:textAlignment="gravity"
+            app:autoSizeTextType="uniform"/>
+
+    <ImageView
+            android:id="@+id/iconImageView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            android:src="@drawable/weather_default"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/temperatureTextView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:lines="1"
+            android:gravity="center_vertical"
+            app:autoSizeMinTextSize="30dp"
+            app:autoSizeMaxTextSize="64dp"
+            android:textAlignment="gravity"
+            app:autoSizeTextType="uniform"/>
+
+</LinearLayout>

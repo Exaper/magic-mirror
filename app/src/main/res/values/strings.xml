@@ -12,4 +12,6 @@
         <item>Hello, sunshine!</item>
         <item>You are the best!</item>
     </string-array>
+
+    <string name="degrees_in_fahrenheit">%1$d&#176;F</string>
 </resources>

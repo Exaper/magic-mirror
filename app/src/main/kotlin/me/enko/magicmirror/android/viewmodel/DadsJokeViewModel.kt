@@ -27,7 +27,7 @@ class DadsJokeViewModel(application: Application) : ScopedViewModel(application)
                 try {
                     DadsJokeRetrofitService.get(getApplication()).getNextJoke().await()
                 } catch (e: Exception) {
-                    DadsJoke(getApplication<Application>().getString(R.string.error_no_internet))
+                    jokeLiveData.value ?: DadsJoke(getApplication<Application>().getString(R.string.error_no_internet))
                 }
             }
             jokeLiveData.postValue(joke)
