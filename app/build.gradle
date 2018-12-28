@@ -9,8 +9,8 @@ android {
         applicationId "me.enko.magicmirror.android"
         minSdkVersion 23
         targetSdkVersion 28
-        versionCode 1
-        versionName "1.0.1-dev"
+        versionCode 2
+        versionName "1.1.0-dev"
         archivesBaseName = "MagicMirror-v$versionName"
         buildConfigField 'String', "OPEN_WEATHER_MAP_APP_ID", "\"a592ba0abd517f1c959832ec53936be\""
     }
