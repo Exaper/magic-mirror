@@ -10,6 +10,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
+import java.util.concurrent.TimeUnit
 
 interface DadsJokeRetrofitService {
     @GET("/")
@@ -29,6 +30,7 @@ interface DadsJokeRetrofitService {
                 .addInterceptor {
                     it.proceed(it.request().newBuilder().header("Accept", "application/json").build())
                 }
+                .connectTimeout(5, TimeUnit.SECONDS)
                 .apply {
                     if (BuildConfig.DEBUG) {
                         addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))

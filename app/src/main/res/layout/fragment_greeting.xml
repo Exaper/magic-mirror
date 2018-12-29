@@ -13,7 +13,6 @@
             android:textStyle="italic"
             android:lines="1"
             android:gravity="center"
-            android:textAppearance="?attr/textAppearanceHeadline5"
             android:textAlignment="gravity"
             tools:text="Hello!"/>
 
