@@ -11,7 +11,7 @@ data class Weather(
 
 ) {
     companion object {
-        val absent = Weather("Offline city", Details.absent, Metadata.absent)
+        val absent = Weather("Mars", Details.absent, Metadata.absent)
     }
 
     @JsonClass(generateAdapter = true)
@@ -20,7 +20,7 @@ data class Weather(
         @Json(name = "humidity") val humidity: Int
     ) {
         companion object {
-            val absent = Details(Float.MIN_VALUE, Int.MIN_VALUE)
+            val absent = Details(30F, Int.MIN_VALUE)
         }
     }
 
@@ -31,7 +31,7 @@ data class Weather(
         @Json(name = "icon") val icon: String
     ) {
         companion object {
-            val absent = arrayListOf(Metadata("No clue", "No idea", ""))
+            val absent = arrayListOf(Metadata("No clue", "Clear sky", ""))
         }
     }
 }
